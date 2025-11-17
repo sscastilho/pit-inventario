@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <title>Login - Inventário</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light d-flex align-items-center justify-content-center" style="height: 100vh;">
+    <div class="card shadow p-4" style="width: 350px;">
+        <h3 class="text-center mb-4">Acesso ao Sistema</h3>
+        {% if erro %}
+        <div class="alert alert-danger">{{ erro }}</div>
+        {% endif %}
+        <form method="post">
+            <div class="mb-3">
+                <label>Email</label>
+                <input type="email" name="email" class="form-control" value="admin@email.com" required>
+            </div>
+            <div class="mb-3">
+                <label>Senha</label>
+                <input type="password" name="senha" class="form-control" value="1234" required>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Entrar</button>
+        </form>
+        <small class="text-muted d-block mt-3 text-center">Use: admin@email.com / 1234</small>
+    </div>
+</body>
+</html>
