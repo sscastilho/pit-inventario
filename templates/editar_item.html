@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <title>Editar Item</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+    <div class="container mt-5" style="max-width: 600px;">
+        <div class="card shadow">
+            <div class="card-header bg-primary text-white">
+                <h4>Editar Item: {{ item['nome'] }}</h4>
+            </div>
+            <div class="card-body">
+                <form method="post">
+                    <div class="mb-3">
+                        <label>Nome do Item</label>
+                        <input type="text" name="nome" class="form-control" value="{{ item['nome'] }}" required>
+                    </div>
+                    <div class="mb-3">
+                        <label>Categoria</label>
+                        <select name="categoria" class="form-select">
+                            {% for cat in categorias %}
+                            <option value="{{ cat['id_categoria'] }}" {% if cat['id_categoria'] == item['id_categoria'] %}selected{% endif %}>
+                                {{ cat['nome'] }}
+                            </option>
+                            {% endfor %}
+                        </select>
+                    </div>
+
+                    <div class="alert alert-info">
+                        <small>Para alterar a quantidade (Atual: <strong>{{ item['quantidade_atual'] }}</strong>), utilize a opção "Movimentar" no Dashboard.</small>
+                    </div>
+
+                    <div class="d-flex justify-content-end gap-2">
+                        <a href="/dashboard" class="btn btn-secondary">Cancelar</a>
+                        <button type="submit" class="btn btn-primary">Salvar Alterações</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

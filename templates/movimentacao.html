@@ -13,6 +13,13 @@
             </div>
             <div class="card-body">
                 <h5 class="card-title mb-4">{{ item['nome'] }} <small class="text-muted">(Atual: {{ item['quantidade_atual'] }})</small></h5>
+
+                {% if erro %}
+                <div class="alert alert-danger">
+                    {{ erro }}
+                </div>
+                {% endif %}
+
                 <form method="post">
                     <div class="mb-3">
                         <label>Tipo de Movimentação</label>
