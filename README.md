@@ -1,4 +1,4 @@
-# 📦 Sistema de Controle de Inventário
+# 📦 Sistema de Controle de Inventário VERSÃO 2.0
 
 Este repositório contém o código-fonte do **Projeto Integrador Transdisciplinar em Engenharia de Software II**. Trata-se de uma aplicação web para gestão de estoque, desenvolvida seguindo a arquitetura **MVC** (Model-View-Controller) e princípios de melhoria contínua (*Kaizen*).
 
